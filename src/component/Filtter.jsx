@@ -1,4 +1,4 @@
-import React,{ useEffect,useState } from 'react'
+import React,{ useState } from 'react'
 import { data } from "../data.js"
 
 export default function FiltterPage() {
@@ -18,14 +18,14 @@ export default function FiltterPage() {
   // if(data){
   //   console.log(data.slice(0,10))
   // }
-  console.log(Math.ceil(data.length/10))
+  // console.log(Math.ceil(data.length/10))
 
   let button = []
     for(let i = 0 ; i <= Math.ceil(data.length/10) ; i++){
       button.push(i)
     }
   return (
-    <div className='p-5'>
+    <div className='p-2 p-md-5'>
       <div className="table-responsive">
         <input className='form-control my-2' onChange={(e)=>setSearch(e.target.value)} placeholder='search your name' />
         <table className="table table-warning table-striped table-hover">
@@ -53,14 +53,15 @@ export default function FiltterPage() {
           
         </table>
       </div>
-        <div className="btn-group mt-2" style={{overflowX:"scroll",maxWidth:"60vw"}}>
-              {button.map((item)=>(
-                <button className='btn btn-primary' style={item == 0?{display:"none"} : null} onClick={()=>{
-                  setPage1(item*10-10)
-                  setPage2(item*10)
-                }}>{item}</button>
-              ))}
-            </div>
+      <div className="btn-group mt-2" style={{overflowX:"scroll",maxWidth:"60vw"}}>
+          {button.map((item)=>(
+            <button className='btn btn-primary' style={item == 0?{display:"none"} : null} onClick={()=>{
+              setPage1(item*10-10)
+              setPage2(item*10)
+            }}>{item}</button>
+          ))}
+      </div>
+            
       
     </div>
   )

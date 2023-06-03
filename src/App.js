@@ -1,10 +1,12 @@
 import './App.css';
-import FiltterPage from './component/Filtter';
+import FilterPage from './component/Filter';
 
 function App() {
   return (
-    <div className="App">  
-      <FiltterPage />
+    <div className="App">
+      <h1 className='p-1 my-3'>Hello This's Hamza</h1>
+      {/* <FiltterPage /> */}
+      <FilterPage />
     </div>
   );                 
 }
