@@ -26,10 +26,10 @@ export default function FilterPage() {
             </thead>
             <tbody class="table-group-divider">
               {data&& data.filter((item)=>{
-                return search.toLowerCase() === "" ? item : item.email.toLowerCase().includes(search.toLowerCase())
+                return search.toLowerCase() === "" ? item : item.name.toLowerCase().includes(search.toLowerCase())
               }).slice(page1,page2).map((items)=>(
               <tr class="table-danger" key={items.id}>
-                <td scope="row">{items.id}</td>
+                <td>{items.id}</td>
                 <td>{items.name}</td>
                 <td>{items.email}</td>
                 <td>{items.phone}</td>
